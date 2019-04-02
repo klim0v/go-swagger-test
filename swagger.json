@@ -1,0 +1,50 @@
+{
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "http"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "title": "Test",
+    "version": "1.0.0"
+  },
+  "host": "localhost:40563",
+  "basePath": "/",
+  "paths": {
+    "/file.csv": {
+      "get": {
+        "produces": [
+          "application/octet-stream"
+        ],
+        "responses": {
+          "200": {
+            "description": "file"
+          }
+        }
+      }
+    },
+    "/upload": {
+      "post": {
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "summary": "Uploads a file.",
+        "parameters": [
+          {
+            "type": "file",
+            "description": "The file to upload.",
+            "name": "upfile",
+            "in": "formData"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "File Uploaded"
+          }
+        }
+      }
+    }
+  }
+}
